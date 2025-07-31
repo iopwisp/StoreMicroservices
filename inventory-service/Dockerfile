@@ -1,4 +1,4 @@
-FROM ubuntu:latest
-LABEL authors="iopwisp"
-
-ENTRYPOINT ["top", "-b"]
+FROM openjdk:17-jdk-alpine
+WORKDIR /app
+COPY target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
